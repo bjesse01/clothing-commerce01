@@ -20,7 +20,7 @@ const Card = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:2000/sendEmail", {
+      const response = await fetch("https://myserver-twng.onrender.com/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const Card = () => {
             <h1 className="font-semibold text-lg">Sale Support</h1>
             <div className="mt-4 w-[270px] text-blue-700">
               <p>
-                <a href="foo">contact@example.com</a>
+                <a href="mailto:bernardsonj01@gmail.com">bernardsonj01@gmail.com</a>
               </p>
             </div>
           </div>
