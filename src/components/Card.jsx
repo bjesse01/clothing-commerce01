@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { MdLocalPhone, MdLocationOn, MdMail, MdWhatsapp } from "react-icons/md";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,15 +21,12 @@ const Card = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://myserver-twng.onrender.com/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post(
+        "https://myserver-twng.onrender.com/sendEmail",
+        formData
+      );
 
-      if (response.ok) {
+      if (response.status === 200) {
         toast.success("Message sent successfully!", {
           position: "top-right",
           autoClose: 3000,
@@ -37,13 +35,14 @@ const Card = () => {
           email: "",
           message: "",
         });
-      } else {
-        const errorData = await response.json();
-        toast.error(errorData.error || "Failed to send message", {
-          position: "top-right",
-          autoClose: 3000,
-        });
       }
+      // else {
+      //   const errorData = await response.json();
+      //   toast.error(errorData.error || "Failed to send message", {
+      //     position: "top-right",
+      //     autoClose: 3000,
+      //   });
+      // }
     } catch (error) {
       console.error("Error sending email: ", error);
       toast.error("Failed to send message", {
@@ -129,7 +128,9 @@ const Card = () => {
             <h1 className="font-semibold text-lg">Sale Support</h1>
             <div className="mt-4 w-[270px] text-blue-700">
               <p>
-                <a href="mailto:bernardsonj01@gmail.com">bernardsonj01@gmail.com</a>
+                <a href="mailto:bernardsonj01@gmail.com">
+                  bernardsonj01@gmail.com
+                </a>
               </p>
             </div>
           </div>

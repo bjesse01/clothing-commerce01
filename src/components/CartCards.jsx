@@ -82,10 +82,7 @@ const CartCards = () => {
           <tbody className="bg-white divide-y divide-dashed divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
             {cartItems &&
               cartItems.map((item) => (
-                <tr
-                  key={item.key}
-                  className="hover:bg-gray-100 dark:hover:bg-gray-700"
-                >
+                <tr key={item.key} className="hover:bg-gray-200">
                   <td>
                     <div
                       onClick={() => handleRemove(item.key)}
