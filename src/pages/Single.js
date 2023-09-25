@@ -26,7 +26,7 @@ export const Single = () => {
   }
 
   return (
-    <div className="px-5 h-full py-7 bg-gray-600 ">
+    <div className="px-5 py-7 bg-gray-600 ">
       <Singular item={product} />
     </div>
   );

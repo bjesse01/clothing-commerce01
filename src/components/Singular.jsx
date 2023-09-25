@@ -4,11 +4,17 @@ import { addToCart } from "../store/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ImageSlider from "./ImageSlider";
+// import { useHistory } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Singular = ({ item }) => {
   const dispatch = useDispatch();
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  // const history = useHistory();
+  const handleGoBack = () => {
+    window.history.go(-1); // Go back to the previous page
+  };
   const handleAddToCart = () => {
     if (selectedSize || selectedColor) {
       const cartItem = {
@@ -30,6 +36,12 @@ const Singular = ({ item }) => {
 
   return (
     <div>
+      <div className="relative">
+        <IoIosArrowBack
+          className="text-2xl text-white absolute -top-5 sm:top-3 left-2 cursor-pointer"
+          onClick={handleGoBack}
+        />
+      </div>
       <div className="sm:flex w-full items-center gap-5">
         <div className="flex flex-col justify-center items-center sm:flex-1 mb-8 sm:mb-0">
           <ImageSlider images={item.images} />
