@@ -37,49 +37,49 @@ const CartCards = () => {
   return (
     <div className="w-full sm:px-5">
       <div className=" overflow-x-scroll">
-        <table className="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700 mb-4">
-          <thead className="bg-gray-100 dark:bg-gray-700">
+        <table className="min-w-full divide-y divide-gray-200 table-fixed mb-4">
+          <thead className="bg-gray-100 dart:text-white dark:bg-gray-700">
             <tr>
               <th scope="col" className="sm:p-4"></th>
               <th
                 scope="col"
-                className="sm:py-4 py-2 sm:px-4 px-2 sm:text-lg text-base font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                className="sm:py-4 py-2 sm:px-4 px-2 sm:text-lg text-base font-medium tracking-wider text-left text-gray-700 uppercase dark:text-white"
               >
                 Product
               </th>
               <th
                 scope="col"
-                className="sm:py-4 py-2 sm:px-6 px-10 sm:text-lg text-center text-base font-medium tracking-wider text-gray-700 uppercase dark:text-gray-400"
+                className="sm:py-4 py-2 sm:px-6 px-10 sm:text-lg text-center text-base font-medium tracking-wider text-gray-700 uppercase dark:text-white"
               >
                 Size
               </th>
               <th
                 scope="col"
-                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-gray-400"
+                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-white"
               >
                 Price
               </th>
               <th
                 scope="col"
-                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-gray-400"
+                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-white"
               >
                 Color
               </th>
               <th
                 scope="col"
-                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-gray-400"
+                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-white"
               >
                 Quantity
               </th>
               <th
                 scope="col"
-                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-gray-400"
+                className="sm:py-4 py-2 sm:px-6 px-2 sm:text-lg text-base font-medium tracking-wider text-center text-gray-700 uppercase dark:text-white"
               >
                 Total
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-dashed divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+          <tbody className="bg-white divide-y divide-dashed divide-gray-200 dark:divide-gray-700">
             {cartItems &&
               cartItems.map((item) => (
                 <tr key={item.key} className="hover:bg-gray-200">
@@ -91,7 +91,7 @@ const CartCards = () => {
                       <AiOutlineClose />
                     </div>
                   </td>
-                  <td className="flex items-center py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <td className="flex items-center py-4 px-6 text-sm font-medium text-black whitespace-nowrap ">
                     <img
                       src={item.images[0]}
                       className="h-12 w-12 sm:pl-2 rounded-md"
@@ -108,20 +108,20 @@ const CartCards = () => {
                       <p>-</p>
                     )}
                   </td>
-                  <td className="py-4 px-6 text-sm text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <td className="py-4 px-6 text-sm text-center font-medium text-gray-900 whitespace-nowrap">
                     <p className="text-gray-400">
                       <span className="font-medium">&euro;</span>
                       {item.price}
                     </p>
                   </td>
-                  <td className="py-4 px-6 text-sm text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <td className="py-4 px-6 text-sm text-center font-medium text-gray-900 whitespace-nowrap ">
                     {item.color ? (
                       <p className="text-gray-400">{item.color}</p>
                     ) : (
                       <p>-</p>
                     )}
                   </td>
-                  <td className="flex px-7 text-sm items-center justify-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <td className="flex px-7 text-sm items-center justify-center font-medium text-gray-900 whitespace-nowrap">
                     <button
                       onClick={() => handleDecrease(item)}
                       className="border-gray-500 border-2 w-[25px] flex items-center justify-center cursor-pointer"
@@ -138,7 +138,7 @@ const CartCards = () => {
                       +
                     </button>
                   </td>
-                  <td className="py-4 px-6 text-sm text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <td className="py-4 px-6 text-sm text-center font-medium text-gray-900 whitespace-nowrap">
                     <p>&euro; {singleTotal(item.price, item.quantity)} </p>
                   </td>
                 </tr>
